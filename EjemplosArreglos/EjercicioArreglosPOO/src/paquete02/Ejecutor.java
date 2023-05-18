@@ -7,6 +7,7 @@ package paquete02;
 
 import java.util.Scanner;
 import paquete01.LibretaCalificacion;
+import paquete04.Colegio;
 /**
  *
  * @author reroes
@@ -20,6 +21,10 @@ public class Ejecutor {
         int numerocalificaciones;
         
         // Ingreso de valores por teclado
+        System.out.println("Ingrese el nombre del Colegio");
+        String nombreColegio = entrada.nextLine();
+        System.out.println("Ingrese la ciudad del Colegio");
+        String ciudadCo = entrada.nextLine();
         System.out.println("Ingrese el nombre del estudiante");
         nombreEstudiante = entrada.nextLine();
         System.out.println("Ingrese el número de calificaciones");
@@ -33,12 +38,16 @@ public class Ejecutor {
             calificacionesEstudiante[i] = entrada.nextDouble();
         }
         
+        Colegio cole = new Colegio(nombreColegio, ciudadCo);
+        cole.establecerNombre(nombreColegio);
+        cole.establecerCiudad(ciudadCo);
         // con el ingreso del nombre del estudiante y el ingreso del conjunto
         // de calificaciones; se procede a crear el objeto de tipo
         // LibretaCalificacion
         LibretaCalificacion libreta = new LibretaCalificacion(
                 nombreEstudiante,
                 calificacionesEstudiante);
+        libreta.establecerColegio(cole);
         // Se llama a los métodos que realizan el calculo del
         // promedio y promedio cualitativo
         libreta.establecerPromedio();

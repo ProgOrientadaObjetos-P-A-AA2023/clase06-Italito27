@@ -1,0 +1,7 @@
+Datos de Vendedor
+Nombre: Italo 
+Edad: 19
+Salario mínimo: 750,00
+Número de autos: 6
+Pago mensual: 1650,00
+
